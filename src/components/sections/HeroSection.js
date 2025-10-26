@@ -22,17 +22,17 @@ const HeroSection = memo(() => {
   return (
     <section 
       id="hero" 
-      className="pt-20 pb-12 md:pt-32 md:pb-24"
+      className="pt-32 pb-20 md:pt-48 md:pb-32"
       aria-label="Sección de introducción"
     >
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex flex-col items-left">
           <div className="w-full max-w-3xl pl-6 mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight text-left mb-6 mt-4">
-              Convierte tu data en valor financiero
+              Convierte tu data en valor económico
             </h1>
             <div 
-              className="text-xl md:text-2xl font-semibold text-deep-purple mb-8 text-left max-w-2xl"
+              className="text-xl md:text-2xl font-semibold text-gray-500 mb-8 text-left max-w-2xl"
               role="doc-subtitle"
             >
               Soy científico de datos, puedo ayudarte a resolver problemas de negocio con data.

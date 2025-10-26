@@ -19,7 +19,7 @@ import Button from '../ui/Button';
 import { CTA_LINK } from '../../data/navigation';
 
 const ContactSection = memo(() => (
-  <section id="contact" className="py-12 sm:py-20">
+  <section id="contact" className="py-24 sm:py-32">
     <div className="max-w-5xl mx-auto px-4">
       <div className="rounded-[24px] w-full mx-auto bg-gradient-to-br from-[hsl(60,5%,44%)] to-[hsl(30,5%,25%)] overflow-hidden">
         <div className="flex flex-col lg:flex-row">
@@ -81,7 +81,7 @@ const ContactSection = memo(() => (
                 href="/assets/pdf/Resume_Diego_Torres_ESP.pdf"
                 text="CV en Español"
                 variant="secondary"
-                className="w-3/4 mx-auto !border-gray-300 text-gray-300"
+                className="w-3/4 mx-auto !border-gray-300 text-white"
                 download="Resume_Diego_Torres_ESP.pdf"
                 ariaLabel="Descargar CV en Español"
               />

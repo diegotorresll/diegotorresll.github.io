@@ -111,7 +111,7 @@ const PortfolioSection = memo(() => {
   return (
     <section 
       id="portfolio" 
-      className="py-20 overflow-x-hidden relative"
+      className="py-28 md:py-36 overflow-x-hidden relative"
       aria-labelledby="portfolio-title"
     >
       <div className="max-w-6xl mx-auto px-4">
