@@ -9,10 +9,8 @@
  */
 
 export const NAV_LINKS = [
-  { href: '#hero', label: 'Inicio' },
-  { href: '#cases', label: 'Casos' },
-  { href: '#companies', label: 'Compañías' },
-  { href: '#about', label: 'Acerca' },
+  { href: '#companies', label: 'Experiencia' },
+  { href: '#portfolio', label: 'Portafolio' },
   { href: '#contact', label: 'Contacto' }
 ];
 
@@ -26,6 +24,11 @@ export const SOCIAL_LINKS = [
     name: 'GitHub',
     href: 'https://github.com/ditola',
     icon: 'github'
+  },
+  { 
+    name: 'Mail',
+    href: 'mailto:diegotorresll@outlook.com',
+    icon: 'mail'
   }
 ];
 

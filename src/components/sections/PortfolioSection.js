@@ -1,6 +1,6 @@
 /**
- * @component CasesSection
- * @description Displays a grid of case studies with an interactive modal view.
+ * @component PortfolioSection
+ * @description Displays a grid of portfolio projects with an interactive modal view.
  * Implements performance optimizations, accessibility features, and smooth transitions.
  * 
  * Features:
@@ -10,9 +10,9 @@
  * - ARIA attributes
  * - Performance optimizations
  * 
- * @typedef {Object} CaseStudy
+ * @typedef {Object} PortfolioProject
  * @property {string} id - Unique identifier
- * @property {string} title - Case study title
+ * @property {string} title - Project title
  * @property {React.ComponentType} icon - Icon component
  * @property {string} problem - Problem statement
  * @property {Object} impact - Impact information
@@ -57,14 +57,14 @@ ModalContainer.propTypes = {
 };
 
 // Main component
-const CasesSection = memo(() => {
-  const [selectedCase, setSelectedCase] = useState(null);
+const PortfolioSection = memo(() => {
+  const [selectedProject, setSelectedProject] = useState(null);
 
   // Handle body scroll lock when modal is open
   useEffect(() => {
     const body = document.body;
     
-    if (selectedCase) {
+    if (selectedProject) {
       // Calculate scrollbar width to prevent layout shift
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       
@@ -85,22 +85,22 @@ const CasesSection = memo(() => {
       body.style.overflow = '';
       body.style.paddingRight = '';
     };
-  }, [selectedCase]);
+  }, [selectedProject]);
 
   // Memoized handlers
   const handleCloseDetail = useCallback(() => {
-    setSelectedCase(null);
+    setSelectedProject(null);
   }, []);
 
-  const handleSelectCase = useCallback((caseStudy) => {
-    setSelectedCase(caseStudy);
+  const handleSelectProject = useCallback((project) => {
+    setSelectedProject(project);
   }, []);
 
   const handleKeyDown = useCallback((event) => {
-    if (event.key === 'Escape' && selectedCase) {
+    if (event.key === 'Escape' && selectedProject) {
       handleCloseDetail();
     }
-  }, [selectedCase, handleCloseDetail]);
+  }, [selectedProject, handleCloseDetail]);
 
   // Add keyboard event listener
   useEffect(() => {
@@ -110,36 +110,36 @@ const CasesSection = memo(() => {
 
   return (
     <section 
-      id="cases" 
-      className="py-20 bg-gradient-to-b from-gray-50 to-white overflow-x-hidden relative"
-      aria-labelledby="cases-title"
+      id="portfolio" 
+      className="py-20 overflow-x-hidden relative"
+      aria-labelledby="portfolio-title"
     >
       <div className="max-w-6xl mx-auto px-4">
         {/* Section Header */}
         <div className="max-w-2xl mx-auto text-center mb-16">
           <h2 
-            id="cases-title"
-            className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+            id="portfolio-title"
+            className="text-3xl md:text-4xl font-bold text-gray-100 mb-6"
           >
-            Casos de Estudio
+            Portafolio
           </h2>
-          <p className="text-gray-600 text-lg">
-            Existen tres niveles de iniciativas que se pueden implementar hoy con la tecnología actual.
+          <p className="text-gray-300 text-lg">
+            Conoce mis proyectos destacados
           </p>
         </div>
 
-        {/* Cases Grid */}
+        {/* Portfolio Grid */}
         <div 
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           role="list"
-          aria-label="Case studies grid"
+          aria-label="Portfolio projects grid"
         >
-          {CASES_DATA.map((caseStudy) => (
-            <div key={caseStudy.id} role="listitem">
+          {CASES_DATA.map((project) => (
+            <div key={project.id} role="listitem">
               <CaseCard
-                caseStudy={caseStudy}
-                onClick={() => handleSelectCase(caseStudy)}
-                isSelected={selectedCase?.id === caseStudy.id}
+                caseStudy={project}
+                onClick={() => handleSelectProject(project)}
+                isSelected={selectedProject?.id === project.id}
               />
             </div>
           ))}
@@ -147,10 +147,10 @@ const CasesSection = memo(() => {
 
         {/* Modal */}
         <AnimatePresence mode="wait">
-          {selectedCase && (
+          {selectedProject && (
             <ModalContainer>
               <CaseDetail
-                caseStudy={selectedCase}
+                caseStudy={selectedProject}
                 onClose={handleCloseDetail}
               />
             </ModalContainer>
@@ -161,6 +161,6 @@ const CasesSection = memo(() => {
   );
 });
 
-CasesSection.displayName = 'CasesSection';
+PortfolioSection.displayName = 'PortfolioSection';
 
-export default CasesSection; 
+export default PortfolioSection;

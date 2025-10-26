@@ -48,10 +48,10 @@ const NavLink = memo(({ href, label, onClick }) => {
       className="relative block px-4 py-2 group"
     >
       {/* Background hover effect */}
-      <div className="absolute inset-0 bg-deep-purple/5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-white/20 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       
       {/* Label */}
-      <span className="relative font-medium text-soft-slate group-hover:text-deep-purple transition-colors duration-300">
+      <span className="relative font-medium text-white/90 group-hover:text-white transition-colors duration-300">
         {label}
       </span>
     </a>
@@ -230,26 +230,30 @@ const NavBar = memo(() => {
         aria-label="Navegación principal"
       >
         <div className="max-w-5xl mx-auto">
-          <div className={`
-            relative bg-white/95 backdrop-blur-sm rounded-lg overflow-visible
-            border border-gray-200/20
-            transition-all duration-300
-            ${isScrolled ? 'shadow-lg' : ''}
-            ${isMobileMenuOpen ? 'z-50' : ''}
-          `}>
+          <div 
+            className={`
+              relative bg-black/20 backdrop-blur-md rounded-lg overflow-visible
+              transition-all duration-300
+              ${isScrolled ? 'shadow-lg shadow-black/10' : ''}
+              ${isMobileMenuOpen ? 'z-50' : ''}
+            `}
+            style={{
+              border: '1px solid rgba(75, 85, 99, 0.6)'
+            }}
+          >
             <div className="relative flex justify-between items-center h-14 px-3">
               <a 
                 href="#hero"
                 className="flex items-center focus:outline-none focus:ring-2 focus:ring-deep-purple focus:ring-offset-2 rounded-lg px-2 py-1"
                 aria-label="Ir al inicio"
               >
-                <span className="text-lg font-bold text-steel-blue">Diego Torres</span>
+                <span className="text-lg font-bold text-white">Diego Torres</span>
               </a>
 
               {/* Mobile menu button */}
               <button 
-                className="md:hidden text-soft-slate hover:text-deep-purple transition-colors
-                  p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-deep-purple focus:ring-offset-2"
+                className="md:hidden text-white/90 hover:text-white transition-colors
+                  p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
                 onClick={toggleMobileMenu}
                 aria-expanded={isMobileMenuOpen}
                 aria-controls="mobile-menu"
@@ -295,21 +299,20 @@ const NavBar = memo(() => {
                   className="absolute top-full left-0 right-0 md:hidden mt-2 rounded-lg shadow-lg"
                   style={{ maxWidth: '100vw' }}
                 >
-                  <div className="p-3 bg-white/95 backdrop-blur-sm rounded-lg border border-gray-200/20">
+                  <div 
+                    className="p-3 bg-black/20 backdrop-blur-md rounded-lg"
+                    style={{
+                      border: '1px solid rgba(75, 85, 99, 0.6)'
+                    }}
+                  >
                     <BentoGrid className="grid-cols-3 auto-rows-[8rem] gap-2">
                       {NAV_LINKS.map(({ href, label }) => {
                         const getDescription = () => {
                           switch(label) {
-                            case "Inicio":
-                              return "Regresa al principio";
-                            case "Compañías":
+                            case "Experiencia":
                                 return "Conoce mi experiencia corporativa";
-                            case "Acerca":
-                              return "Descubre mi trayectoria profesional";
-                            case "Casos":
+                            case "Portafolio":
                               return "Explora mis proyectos destacados";
-                            case "Servicios":
-                              return "Conoce cómo puedo ayudarte";
                             case "Contacto":
                               return "Encuentra mis datos de contacto";
                             default:

@@ -28,10 +28,9 @@ import Footer from '../components/layout/Footer';
 
 // Lazy load section components for better initial load performance
 const HeroSection = React.lazy(() => import('../components/sections/HeroSection'));
-const CasesSection = React.lazy(() => import('../components/sections/CasesSection'));
+const PortfolioSection = React.lazy(() => import('../components/sections/PortfolioSection'));
 const CompaniesSection = React.lazy(() => import('../components/sections/CompaniesSection'));
 const ContactSection = React.lazy(() => import('../components/sections/ContactSection'));
-const AboutSection = React.lazy(() => import('../components/sections/AboutSection'));
 
 // Loading fallback component
 const SectionLoader = () => (
@@ -42,24 +41,36 @@ const SectionLoader = () => (
 
 const Portfolio = React.memo(() => {
   return (
-    <div className="min-h-screen bg-white">
-      <NavBar />
-      <Suspense fallback={<SectionLoader />}>
-        <HeroSection />
-      </Suspense>
-      <Suspense fallback={<SectionLoader />}>
-        <CasesSection />
-      </Suspense>
-      <Suspense fallback={<SectionLoader />}>
-        <CompaniesSection />
-      </Suspense>
-      <Suspense fallback={<SectionLoader />}>
-        <AboutSection />
-      </Suspense>
-      <Suspense fallback={<SectionLoader />}>
-        <ContactSection />
-      </Suspense>
-      <Footer />
+    <div className="min-h-screen w-full relative bg-black">
+      {/* Prismatic Aurora Burst - Multi-layered Gradient Background */}
+      <div
+        className="fixed inset-0 z-0"
+        style={{
+          background: `
+            radial-gradient(ellipse 120% 80% at 70% 20%, rgba(255, 20, 147, 0.15), transparent 50%),
+            radial-gradient(ellipse 100% 60% at 30% 10%, rgba(0, 255, 255, 0.12), transparent 60%),
+            radial-gradient(ellipse 90% 70% at 50% 0%, rgba(138, 43, 226, 0.18), transparent 65%),
+            radial-gradient(ellipse 110% 50% at 80% 30%, rgba(255, 215, 0, 0.08), transparent 40%),
+            #000000
+          `,
+        }}
+      />
+      <div className="relative z-10">
+        <NavBar />
+        <Suspense fallback={<SectionLoader />}>
+          <HeroSection />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <CompaniesSection />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <PortfolioSection />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <ContactSection />
+        </Suspense>
+        <Footer />
+      </div>
     </div>
   );
 });

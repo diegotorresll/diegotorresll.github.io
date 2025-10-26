@@ -14,7 +14,7 @@
  */
 
 import React, { useState } from 'react';
-import Portfolio from './pages/portfolio';
+import Portfolio from './pages/Portfolio';
 import './styles/animations.css';
 
 // Error Boundary Component

@@ -13,13 +13,13 @@ import CompanyCard from '../ui/CompanyCard';
 
 const CompaniesSection = () => {
   return (
-    <section id="companies" className="py-16 bg-gray-100">
+    <section id="companies" className="py-16">
       <div className="max-w-5xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-3 text-steel-blue">
-          Experiencia respaldada por empresas líderes
+          Experiencia en empresas líderes en Latinoamérica
         </h2>
         <p className="text-xl text-soft-slate text-center mb-12 max-w-3xl mx-auto">
-          Dominando finanzas, tecnología y negocios para resolver problemas con data.
+          Combino tecnología y finanzas para resolver problemas de negocio con data.
         </p>
         
         <div className="overflow-hidden">

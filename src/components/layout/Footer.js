@@ -7,7 +7,7 @@
  */
 
 import React, { memo } from 'react';
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 import { SOCIAL_LINKS } from '../../data/navigation';
 
 const SocialIcon = memo(({ type }) => {
@@ -16,6 +16,8 @@ const SocialIcon = memo(({ type }) => {
       return <FaLinkedin size={24} />;
     case 'github':
       return <FaGithub size={24} />;
+    case 'mail':
+      return <FaEnvelope size={24} />;
     default:
       return null;
   }
@@ -24,10 +26,10 @@ const SocialIcon = memo(({ type }) => {
 SocialIcon.displayName = 'SocialIcon';
 
 const Footer = memo(() => (
-  <footer className="py-8 bg-off-white border-t border-system-gray">
+  <footer className="py-8">
     <div className="max-w-5xl mx-auto px-4">
       <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-sm text-soft-slate">
+        <p className="text-sm text-gray-300">
           © {new Date().getFullYear()} Diego Torres
         </p>
         <div className="flex items-center gap-4">
@@ -37,7 +39,7 @@ const Footer = memo(() => (
               href={href}
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-soft-slate hover:text-deep-purple transition-colors"
+              className="text-gray-300 hover:text-white transition-colors"
               aria-label={`Visitar perfil de ${name}`}
             >
               <SocialIcon type={icon} />

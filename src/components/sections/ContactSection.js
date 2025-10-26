@@ -27,10 +27,10 @@ const ContactSection = memo(() => (
           <div className="flex-1 flex items-center justify-center p-16 lg:p-16">
             <div className="text-center lg:text-left">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
-                Aprovecha tu propia data.
+                Genera valor con tu data
               </h2>
               <p className="text-sm sm:text-base lg:text-lg text-white/80">
-                Puedo ayudarte.
+                Conversemos para descubrir cómo lograrlo
               </p>
             </div>
           </div>
@@ -81,17 +81,9 @@ const ContactSection = memo(() => (
                 href="/assets/pdf/Resume_Diego_Torres_ESP.pdf"
                 text="CV en Español"
                 variant="secondary"
-                className="w-3/4 mx-auto !border-soft-slate text-soft-slate"
+                className="w-3/4 mx-auto !border-gray-300 text-gray-300"
                 download="Resume_Diego_Torres_ESP.pdf"
                 ariaLabel="Descargar CV en Español"
-              />
-              <Button
-                href="/assets/pdf/Resume_Diego_Torres_ENG.pdf"
-                text="CV in English"
-                variant="secondary"
-                className="w-3/4 mx-auto !border-soft-slate text-soft-slate"
-                download="Resume_Diego_Torres_ENG.pdf"
-                ariaLabel="Download CV in English"
               />
             </div>
           </div>
