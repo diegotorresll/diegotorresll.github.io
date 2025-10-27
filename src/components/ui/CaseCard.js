@@ -82,7 +82,7 @@ const CaseCard = memo(({
         aria-pressed={isSelected}
         aria-label={`Ver caso de estudio: ${caseStudy.title}`}
         className={`
-          relative rounded-2xl overflow-hidden cursor-pointer h-[400px] group
+          relative rounded-2xl overflow-hidden cursor-pointer h-[180px] md:h-[250px] w-full max-w-[280px] md:max-w-none mx-auto group
           bg-off-white hover:bg-system-gray/100 glass-effect
           border border-system-gray shadow-lg hover:shadow-xl
           focus:outline-none focus:ring-2 focus:ring-deep-purple focus:ring-offset-2
@@ -94,13 +94,13 @@ const CaseCard = memo(({
         {/* Content container */}
         <motion.div 
           layoutId={`content-container-${caseStudy.id}`}
-          className="relative h-full p-8 flex flex-col items-center justify-center"
+          className="relative h-full p-4 md:p-8 flex flex-col items-center justify-center"
           transition={sharedTransition}
         >
           {/* Icon container */}
           <motion.div
             layoutId={`icon-container-${caseStudy.id}`}
-            className="relative w-32 h-32 mb-8 flex items-center justify-center"
+            className="relative w-16 h-16 md:w-32 md:h-32 mb-4 md:mb-8 flex items-center justify-center"
             aria-hidden="true"
             transition={sharedTransition}
           >
@@ -109,7 +109,7 @@ const CaseCard = memo(({
               className="flex items-center justify-center"
               transition={sharedTransition}
             >
-              <caseStudy.icon className="w-16 h-16 text-steel-blue" />
+              <caseStudy.icon className="w-8 h-8 md:w-16 md:h-16 text-steel-blue" />
             </motion.div>
           </motion.div>
 
@@ -121,7 +121,7 @@ const CaseCard = memo(({
           >
             <motion.h3 
               layoutId={`title-${caseStudy.id}`}
-              className="text-xl font-medium text-steel-blue"
+              className="text-lg md:text-xl font-medium text-steel-blue"
               transition={sharedTransition}
             >
               {caseStudy.title}
@@ -129,7 +129,7 @@ const CaseCard = memo(({
             {caseStudy.description && (
               <motion.p
                 layoutId={`description-${caseStudy.id}`}
-                className="text-sm text-soft-slate"
+                className="text-xs md:text-sm text-soft-slate"
                 transition={sharedTransition}
               >
                 {caseStudy.description}

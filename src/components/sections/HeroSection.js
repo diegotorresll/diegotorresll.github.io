@@ -35,7 +35,7 @@ const HeroSection = memo(() => {
               className="text-xl md:text-2xl font-semibold text-gray-500 mb-8 text-left max-w-2xl"
               role="doc-subtitle"
             >
-              Soy científico de datos, puedo ayudarte a resolver problemas de negocio con data.
+              Soy científico de datos, resuelvo problemas de negocio con data.
             </div>
             <div className="flex justify-left">
               <Button 

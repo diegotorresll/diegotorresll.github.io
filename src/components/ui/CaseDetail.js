@@ -318,22 +318,22 @@ const CaseDetail = ({ caseStudy, onClose }) => {
             {/* Main content */}
             <motion.div 
               layoutId={`content-container-${caseStudy.id}`}
-              className="relative px-12"
+              className="relative px-14"
             >
               {/* Header Section */}
-              <div className="relative min-h-[120px] mb-16 pt-20">
+              <div className="relative min-h-[120px] mb-12 pt-0">
                 {/* Icon and Title Container */}
-                <div className="flex flex-col items-center space-y-6">
+                <div className="flex flex-col items-center space-y-2">
                   {/* Large background icon */}
                   <motion.div
                     layoutId={`icon-container-${caseStudy.id}`}
                     className="flex items-center justify-center"
                     style={{
-                      transform: 'scale(2.5)',
+                      transform: 'scale(1.5)',
                       marginBottom: '2rem',
                     }}
                   >
-                    <caseStudy.icon className="w-64 h-64 text-gray-900" />
+                    <caseStudy.icon className="w-16 h-16 md:w-24 md:h-24 text-gray-900" />
                   </motion.div>
 
                   {/* Title */}

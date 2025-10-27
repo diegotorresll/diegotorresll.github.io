@@ -11,7 +11,16 @@ const CompanyCard = ({ company }) => (
       <img 
         src={company.logo}
         alt={`${company.name} logo`} 
-        className="max-w-[100px] md:max-w-[120px] h-[36px] md:h-[48px] object-contain grayscale brightness-95 contrast-75 group-hover:brightness-60 group-hover:contrast-100 transition-all duration-300" 
+        className="
+          max-w-[100px] md:max-w-[120px] 
+          h-[36px] md:h-[48px] 
+          object-contain
+          invert
+          brightness-0
+          contrast-40
+          opacity-40 
+          group-hover:opacity-100
+          transition-all duration-300"
       />
     </div>
   </a>
