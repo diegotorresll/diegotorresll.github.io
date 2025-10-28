@@ -16,7 +16,7 @@ const CompaniesSection = () => {
     <section id="companies" className="py-24 md:py-32">
       <div className="max-w-5xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-3 text-white">
-          Experiencia en empresas líderes en Latinoamérica
+          Experiencia en empresas líderes de Latinoamérica
         </h2>
         <p className="text-xl text-gray-400 text-center mb-12 max-w-3xl mx-auto">
           Combino tecnología y finanzas para resolver problemas de negocio con data.
