@@ -121,10 +121,10 @@ const PortfolioSection = memo(() => {
             id="portfolio-title"
             className="text-3xl md:text-4xl font-bold text-gray-100 mb-6"
           >
-            Portafolio
+            Portafolio de Analítica y ML
           </h2>
           <p className="text-gray-300 text-lg">
-            Conoce mis proyectos destacados
+            Conoce el detalle cómo los datos generaron beneficios financieros a través de la ciencia de datos y machine learning
           </p>
         </div>
 

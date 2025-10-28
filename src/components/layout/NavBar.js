@@ -60,6 +60,7 @@ const NavLink = memo(({ href, label, onClick }) => {
 
 NavLink.displayName = 'NavLink';
 
+// eslint-disable-next-line no-unused-vars
 const SpinningIcon = () => (
   <motion.div
     className="relative w-10 h-10 border-2 border-deep-purple/50 overflow-hidden"
