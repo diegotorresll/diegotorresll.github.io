@@ -327,7 +327,7 @@ const NavBar = memo(() => {
                               <div className="grid grid-cols-[0.9fr,auto] items-center gap-3">
                                 <div>
                                   <div>{label}</div>
-                                  <p className="text-xs text-gray-500/60">{getDescription()}</p>
+                                  <p className="text-xs text-black font-normal">{getDescription()}</p>
                                 </div>
                                 {label === "Portafolio"}
                               </div>
@@ -359,7 +359,7 @@ const NavBar = memo(() => {
                         );
                       })}
                       <BentoGridItem
-                        className="col-span-3 bg-gray-600 hover:bg-gray-500 [&>div>div]:!my-0 [&>div>div]:text-gray-50"
+                        className="col-span-3 bg-cyan-400 hover:bg-cyan-400/90 [&>div>div]:!my-0 [&>div>div]:text-gray-900"
                         onClick={() => window.open(CTA_LINK, '_blank')}
                         title="Conversemos"
                         description="Ingresa a mi calendario para agendar un espacio"
@@ -409,8 +409,8 @@ const NavBar = memo(() => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.5 }}
               onClick={scrollToTop}
-              className="fixed bottom-6 right-20 p-3 bg-deep-purple text-white rounded-full shadow-lg md:hidden
-                hover:bg-deep-purple/90 focus:outline-none focus:ring-2 focus:ring-deep-purple focus:ring-offset-2
+              className="fixed bottom-6 right-20 p-3 bg-cyan-400 text-black rounded-full shadow-lg md:hidden
+                hover:bg-cyan-400/90 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2
                 z-50 transition-colors duration-300"
               aria-label="Volver arriba"
             >

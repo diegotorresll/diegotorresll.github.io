@@ -34,7 +34,7 @@ const Button = memo(({
   const baseStyles = "inline-flex items-center justify-center px-6 py-2 rounded-lg transition-all duration-200 whitespace-nowrap text-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-deep-purple disabled:opacity-60 disabled:cursor-not-allowed";
   
   const variantStyles = {
-    primary: 'bg-system-gray hover:bg-gray-400 text-black shadow-lg hover:shadow-xl active:transform active:scale-95 border border-gray-200',
+    primary: 'bg-system-gray hover:bg-cyan-400 text-black shadow-lg hover:shadow-xl active:transform active:scale-95 border border-gray-200 hover:border-cyan-400',
     secondary: 'bg-transparent border border-system-gray hover:border-pale-sage text-gray-300 hover:text-pale-sage active:transform active:scale-95'
   };
 

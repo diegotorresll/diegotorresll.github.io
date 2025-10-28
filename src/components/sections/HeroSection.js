@@ -15,6 +15,7 @@
 
 import React, { memo } from 'react';
 import Button from '../ui/Button';
+import AnimatedHeadline from '../ui/AnimatedHeadline';
 import { CTA_LINK, NAV_LINKS } from '../../data/navigation';
 
 
@@ -28,11 +29,14 @@ const HeroSection = memo(() => {
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex flex-col items-left">
           <div className="w-full max-w-3xl pl-6 mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight text-left mb-6 mt-4">
-              Convierte tu data en beneficio económico
-            </h1>
+            <AnimatedHeadline 
+              text="Convierte tu data en beneficio económico"
+              highlightText="beneficio económico"
+              className="mb-6 mt-4"
+              highlightClassName="text-cyan-400 italic font-serif"
+            />
             <div 
-              className="text-xl md:text-2xl font-semibold text-gray-500 mb-8 text-left max-w-2xl"
+              className="text-xl md:text-2xl font-semibold text-gray-400 mb-8 text-left max-w-2xl"
               role="doc-subtitle"
             >
               Descubre algunos proyectos que lideré y generaron más de $100 millones en ahorros al año.
