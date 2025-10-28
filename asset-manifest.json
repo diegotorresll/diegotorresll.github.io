@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.93e04db2.css",
+    "main.js": "/static/js/main.75b9e63b.js",
+    "static/js/686.00baf5bb.chunk.js": "/static/js/686.00baf5bb.chunk.js",
+    "static/js/749.1e95eaf6.chunk.js": "/static/js/749.1e95eaf6.chunk.js",
+    "static/js/570.71e7c230.chunk.js": "/static/js/570.71e7c230.chunk.js",
+    "static/js/138.7eaaea9e.chunk.js": "/static/js/138.7eaaea9e.chunk.js",
+    "static/media/profile-hero.png": "/static/media/profile-hero.38df3b8062e0a243dee7.png",
+    "static/media/grupogloria.png": "/static/media/grupogloria.f3e60207dffcf47a1587.png",
+    "static/media/savia.png": "/static/media/savia.6036b3568a3b959f0555.png",
+    "static/media/diacsa.png": "/static/media/diacsa.081140484c83850825c6.png",
+    "static/media/vitapro.png": "/static/media/vitapro.f02d3eca05e0111796e6.png",
+    "static/media/alicorp.png": "/static/media/alicorp.2cc5168c60dbdb75cdaa.png",
+    "index.html": "/index.html",
+    "main.93e04db2.css.map": "/static/css/main.93e04db2.css.map",
+    "main.75b9e63b.js.map": "/static/js/main.75b9e63b.js.map",
+    "686.00baf5bb.chunk.js.map": "/static/js/686.00baf5bb.chunk.js.map",
+    "749.1e95eaf6.chunk.js.map": "/static/js/749.1e95eaf6.chunk.js.map",
+    "570.71e7c230.chunk.js.map": "/static/js/570.71e7c230.chunk.js.map",
+    "138.7eaaea9e.chunk.js.map": "/static/js/138.7eaaea9e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.93e04db2.css",
+    "static/js/main.75b9e63b.js"
+  ]
+}

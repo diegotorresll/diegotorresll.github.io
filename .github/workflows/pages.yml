@@ -1,0 +1,74 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]   # change if your default branch isn’t main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install deps
+        run: npm ci
+
+      # Adjust this if your build command is different
+      - name: Build
+        run: npm run build
+
+      # Detect the output folder (supports common defaults: build, dist, out)
+      - name: Detect build directory
+        id: detect
+        run: |
+          for d in build dist out; do
+            if [ -d "$d" ]; then
+              echo "dir=$d" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          done
+          echo "❌ No build output directory (build/, dist/, or out/) found."
+          exit 1
+
+      # Optional (SPA routing): serve index.html on unknown routes
+      - name: Add 404.html for SPA
+        run: |
+          cp "${{ steps.detect.outputs.dir }}/index.html" "${{ steps.detect.outputs.dir }}/404.html" || true
+
+      # Optional: prevent Jekyll processing
+      - name: Add .nojekyll
+        run: |
+          touch "${{ steps.detect.outputs.dir }}/.nojekyll"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ steps.detect.outputs.dir }}
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
