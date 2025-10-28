@@ -22,7 +22,7 @@ export const SOCIAL_LINKS = [
   },
   { 
     name: 'GitHub',
-    href: 'https://github.com/ditola',
+    href: 'https://github.com/diegotorresll',
     icon: 'github'
   },
   { 
