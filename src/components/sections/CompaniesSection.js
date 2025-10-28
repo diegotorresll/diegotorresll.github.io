@@ -18,7 +18,7 @@ const CompaniesSection = () => {
         <h2 className="text-3xl font-bold text-center mb-3 text-white">
           Experiencia en empresas líderes en Latinoamérica
         </h2>
-        <p className="text-xl text-soft-slate text-center mb-12 max-w-3xl mx-auto">
+        <p className="text-xl text-gray-400 text-center mb-12 max-w-3xl mx-auto">
           Combino tecnología y finanzas para resolver problemas de negocio con data.
         </p>
         
