@@ -36,9 +36,9 @@ const contentVariants = {
 };
 
 const sections = [
-  { id: 'problem', label: '01 Problem Statement' },
-  { id: 'solution', label: '02 Solution Approach' },
-  { id: 'demo', label: '03 Solution Demo' }
+  { id: 'problem', label: '01 Problema' },
+  { id: 'solution', label: '02 Solución' },
+  { id: 'demo', label: '03 Demostración' }
 ];
 
 const CaseDetail = ({ caseStudy, onClose }) => {
@@ -183,7 +183,7 @@ const CaseDetail = ({ caseStudy, onClose }) => {
 
                   .radio-container .glider-container .glider {
                     position: absolute;
-                    height: 4.5rem;
+                    height: 2.5rem;
                     width: 2px;
                     background: var(--main-color);
                     transition: transform 0.5s cubic-bezier(0.37, 1.95, 0.66, 0.56);
@@ -209,7 +209,7 @@ const CaseDetail = ({ caseStudy, onClose }) => {
                     transition: all 0.3s ease-in-out;
                     display: flex;
                     flex-direction: column;
-                    min-height: 4.5rem;
+                    min-height: 2.5rem;
                   }
 
                   .radio-container input:checked + label {
@@ -232,11 +232,11 @@ const CaseDetail = ({ caseStudy, onClose }) => {
                   }
 
                   .radio-container input:nth-of-type(2):checked ~ .glider-container .glider {
-                    transform: translateY(8rem);
+                    transform: translateY(7rem);
                   }
 
                   .radio-container input:nth-of-type(3):checked ~ .glider-container .glider {
-                    transform: translateY(14.75rem);
+                    transform: translateY(13rem);
                   }
                 `}
               </style>
@@ -253,9 +253,9 @@ const CaseDetail = ({ caseStudy, onClose }) => {
                   <label htmlFor={`radio-${section.id}`}>
                     <div className="text-sm font-medium">{section.label}</div>
                     <div className="subheader">
-                      {section.id === 'problem' && 'Understanding the Challenge'}
-                      {section.id === 'solution' && 'Strategic Implementation'}
-                      {section.id === 'demo' && 'Results & Impact'}
+                      {section.id === 'problem' && 'Comprendiendo el desafío'}
+                      {section.id === 'solution' && 'Implementación estratégica'}
+                      {section.id === 'demo' && 'Resultados e impacto'}
                     </div>
                   </label>
                 </React.Fragment>
@@ -318,7 +318,7 @@ const CaseDetail = ({ caseStudy, onClose }) => {
             {/* Main content */}
             <motion.div 
               layoutId={`content-container-${caseStudy.id}`}
-              className="relative px-14"
+              className="relative px-8 sm:px-10 lg:px-14"
             >
               {/* Header Section */}
               <div className="relative min-h-[120px] mb-12 pt-0">
@@ -363,37 +363,43 @@ const CaseDetail = ({ caseStudy, onClose }) => {
               >
                 {/* Problem Statement Section */}
                 <div ref={sectionRefs.problem} className="space-y-8">
-                  <h3 className="text-2xl font-semibold text-gray-900">Problem Statement</h3>
+                  <h3 className="text-2xl font-semibold text-gray-900">Definición del Problema</h3>
                   <div className="prose prose-lg max-w-none text-gray-600">
                     <p>
-                      {caseStudy.challenge || "The challenge was to revolutionize how data insights are delivered, making them more accessible and actionable for stakeholders across the organization."}
+                      {caseStudy.challenge}
                     </p>
-                    <h4 className="text-gray-900">Key Challenges</h4>
-                    <ul>
-                      <li>Existing processes were manual and time-consuming</li>
-                      <li>Data silos prevented holistic decision-making</li>
-                      <li>Lack of real-time insights hindered rapid response</li>
+                    <h4 className="text-gray-900 mt-8 mb-4">Desafíos Clave</h4>
+                    <ul className="list-none space-y-2">
+                      {caseStudy.keyChallenges.map((challenge, index) => (
+                        <li key={index} className="flex items-start">
+                          <div className="w-1.5 h-1.5 bg-gray-400 xs mt-2 mr-3 flex-shrink-0"></div>
+                          <span>{challenge}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
 
                 {/* Solution Approach Section */}
                 <div ref={sectionRefs.solution} className="space-y-8">
-                  <h3 className="text-2xl font-semibold text-gray-900">Solution Approach</h3>
+                  <h3 className="text-2xl font-semibold text-gray-900">Enfoque de Solución</h3>
                   <div className="prose prose-lg max-w-none text-gray-600">
-                    <p>Working backwards from the ideal outcome, we identified key requirements and developed a comprehensive solution strategy.</p>
-                    <h4 className="text-gray-900">Solution Framework</h4>
-                    <ul>
-                      <li>Automated data collection and processing pipeline</li>
-                      <li>Real-time analytics dashboard with customizable views</li>
-                      <li>Machine learning models for predictive insights</li>
+                    <p>{caseStudy.solutionDescription}</p>
+                    <h4 className="text-gray-900 mt-8 mb-4">Marco de Solución</h4>
+                    <ul className="list-none space-y-2">
+                      {caseStudy.solutionFramework.map((item, index) => (
+                        <li key={index} className="flex items-start">
+                          <div className="w-1.5 h-1.5 bg-gray-400 xs mt-2 mr-3 flex-shrink-0"></div>
+                          <span>{item}</span>
+                        </li>
+                      ))}
                     </ul>
-                    <h4 className="text-gray-900">Impact Metrics</h4>
-                    <div className="grid grid-cols-3 gap-6 not-prose mt-8">
+                    <h4 className="text-gray-900 mt-8 mb-4">Métricas de Impacto</h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 not-prose mt-8">
                       {caseStudy.impact.metrics.map((metric, index) => (
-                        <div key={index} className="p-6 bg-white rounded-xl text-center shadow-sm">
-                          <div className="text-3xl font-bold text-emerald-600 mb-2">{metric.value}</div>
-                          <div className="text-sm text-gray-600">{metric.label}</div>
+                        <div key={index} className="p-4 sm:p-6 bg-white rounded-xl text-center shadow-sm">
+                          <div className="text-2xl sm:text-3xl font-bold text-emerald-600 mb-2">{metric.value}</div>
+                          <div className="text-xs sm:text-sm text-gray-600">{metric.label}</div>
                         </div>
                       ))}
                     </div>
@@ -402,13 +408,23 @@ const CaseDetail = ({ caseStudy, onClose }) => {
 
                 {/* Demo Section */}
                 <div ref={sectionRefs.demo} className="space-y-8">
-                  <h3 className="text-2xl font-semibold text-gray-900">Solution Demo</h3>
+                  <h3 className="text-2xl font-semibold text-gray-900">Demostración de Solución</h3>
                   <div className="prose prose-lg max-w-none text-gray-600">
-                    <p>Experience the solution in action through this interactive demonstration.</p>
-                    <div className="bg-white rounded-xl p-8 shadow-sm not-prose">
-                      {/* Demo content would go here */}
-                      <div className="aspect-video bg-gray-100 rounded-lg flex items-center justify-center">
-                        <p className="text-gray-500">Demo Content</p>
+                    <p className="mb-6">{caseStudy.demo.description}</p>
+                    <div className="bg-white rounded-xl p-2 sm:p-6 lg:p-8 shadow-sm not-prose">
+                      <div className="aspect-video rounded-lg overflow-hidden">
+                        <img 
+                          src={caseStudy.demo.image} 
+                          alt={caseStudy.demo.alt}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                            e.target.nextSibling.style.display = 'flex';
+                          }}
+                        />
+                        <div className="w-full h-full bg-gray-100 flex items-center justify-center hidden">
+                          <p className="text-gray-500">Imagen de demostración no disponible</p>
+                        </div>
                       </div>
                     </div>
                   </div>

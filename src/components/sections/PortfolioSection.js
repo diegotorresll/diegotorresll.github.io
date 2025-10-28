@@ -121,7 +121,7 @@ const PortfolioSection = memo(() => {
             id="portfolio-title"
             className="text-3xl md:text-4xl font-bold text-primary mb-6"
           >
-            Portafolio de Analítica y ML
+            Portafolio de Analítica
           </h2>
           <p className="text-primary-subtle text-lg md:text-xl font-normal">
             Conoce el detalle cómo logré generar valor a través de la ciencia de datos y machine learning

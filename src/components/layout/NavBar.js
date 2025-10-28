@@ -324,13 +324,12 @@ const NavBar = memo(() => {
                         return (
                           <BentoGridItem
                             key={href}
-                            title={
-                              <div className="grid grid-cols-[0.9fr,auto] items-center gap-3">
-                                <div>
-                                  <div>{label}</div>
-                                  <p className="text-xs text-gray-700 font-normal">{getDescription()}</p>
+                            header={
+                              <div className="space-y-2">
+                                <div className="font-sans font-bold text-gray-800">
+                                  {label}
                                 </div>
-                                {label === "Portafolio"}
+                                <p className="text-xs text-gray-700 font-normal">{getDescription()}</p>
                               </div>
                             }
                             onClick={(e) => {

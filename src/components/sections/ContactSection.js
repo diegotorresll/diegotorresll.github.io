@@ -45,7 +45,7 @@ const ContactSection = memo(() => (
                 loading="lazy"
                 decoding="async"
                 style={{
-                  transform: 'scale(1.01)',
+                  transform: 'scale(1.05)',
                   willChange: 'transform'
                 }}
               />

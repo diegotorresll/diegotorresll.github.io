@@ -30,7 +30,7 @@ module.exports = {
         'emerald-600': '#059669',       // Used in CaseDetail
       },
       backgroundImage: {
-        'grain': "url('data:image/png;base64,data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAElBMVEWIiIiIiIiIiIiIiIiIiIiIiIhh4uDGAAAABnRSTlMAMDAwMDCXjpLYAAAAMElEQVQ4y2NgGAWjYBSMAkwQyMLACAdMDKMKRhWMKhhVMKpgVMGoggEXjIJRMApwAQAqogX5GkdvjwAAAABJRU5ErkJggg==')",
+        'grain': "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAElBMVEWIiIiIiIiIiIiIiIiIiIiIiIhh4uDGAAAABnRSTlMAMDAwMDCXjpLYAAAAMElEQVQ4y2NgGAWjYBSMAkwQyMLACAdMDKMKRhWMKhhVMKpgVMGoggEXjIJRMApwAQAqogX5GkdvjwAAAABJRU5ErkJggg==')",
       },
     },
   },
