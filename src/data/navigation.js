@@ -9,8 +9,8 @@
  */
 
 export const NAV_LINKS = [
-  { href: '#companies', label: 'Experiencia' },
   { href: '#portfolio', label: 'Portafolio' },
+  { href: '#companies', label: 'Experiencia' },
   { href: '#contact', label: 'Contacto' }
 ];
 

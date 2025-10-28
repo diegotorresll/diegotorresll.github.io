@@ -210,14 +210,14 @@ const NavBar = memo(() => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-white/90 backdrop-blur-lg z-40 touch-none"
+            className="fixed inset-0 bg-black/20 backdrop-blur-lg z-40"
             onClick={() => setIsMobileMenuOpen(false)}
           />
         )}
       </AnimatePresence>
 
       <motion.nav 
-        className="w-screen top-0 z-50 fixed px-2 pt-3"
+        className="w-full top-0 z-50 fixed px-2 pt-3"
         initial={{ y: -100 }}
         animate={{ 
           y: hideNav ? -100 : 0,
@@ -296,8 +296,8 @@ const NavBar = memo(() => {
                   animate={{ height: 'auto', opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
-                  className="absolute top-full left-0 right-0 md:hidden mt-2 rounded-lg shadow-lg"
-                  style={{ maxWidth: '100vw' }}
+                  className="absolute top-full left-0 right-0 md:hidden mt-2 rounded-lg shadow-lg z-50"
+                  style={{ maxWidth: 'calc(100vw - 1rem)' }}
                 >
                   <div 
                     className="p-3 bg-black/20 backdrop-blur-md rounded-lg"
@@ -309,10 +309,10 @@ const NavBar = memo(() => {
                       {NAV_LINKS.map(({ href, label }) => {
                         const getDescription = () => {
                           switch(label) {
-                            case "Experiencia":
-                                return "Conoce mi experiencia corporativa";
                             case "Portafolio":
                               return "Explora mis proyectos destacados";
+                            case "Experiencia":
+                                return "Conoce mi experiencia corporativa";
                             case "Contacto":
                               return "Encuentra mis datos de contacto";
                             default:
@@ -329,31 +329,37 @@ const NavBar = memo(() => {
                                   <div>{label}</div>
                                   <p className="text-xs text-gray-500/60">{getDescription()}</p>
                                 </div>
-                                {label === "Casos" && <SpinningIcon />}
+                                {label === "Portafolio"}
                               </div>
                             }
                             onClick={(e) => {
                               e.preventDefault();
+                              e.stopPropagation();
                               const element = document.querySelector(href);
                               if (element) {
-                                const navbarHeight = 56 + 32;
-                                const elementPosition = element.getBoundingClientRect().top;
-                                const offsetPosition = elementPosition + window.scrollY - navbarHeight;
-
-                                window.scrollTo({
-                                  top: offsetPosition,
-                                  behavior: "smooth"
-                                });
+                                // Close menu immediately to prevent interference
                                 setIsMobileMenuOpen(false);
+                                
+                                // Small delay to ensure menu closes before scroll
+                                setTimeout(() => {
+                                  const navbarHeight = 56 + 32 + 12; // Same as desktop version
+                                  const elementPosition = element.getBoundingClientRect().top;
+                                  const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+
+                                  window.scrollTo({
+                                    top: offsetPosition,
+                                    behavior: "smooth"
+                                  });
+                                }, 50);
                               }
                             }}
                             isActive={activeSection === href}
-                            className={`bg-gray-50 hover:bg-gray-100 ${label === "Casos" ? "col-span-2" : ""}`}
+                            className={`bg-gray-50 hover:bg-gray-100`}
                           />
                         );
                       })}
                       <BentoGridItem
-                        className="col-span-3 bg-deep-purple hover:bg-gray-100 [&>div>div]:!my-0 [&>div>div]:text-gray-50"
+                        className="col-span-3 bg-gray-600 hover:bg-gray-500 [&>div>div]:!my-0 [&>div>div]:text-gray-50"
                         onClick={() => window.open(CTA_LINK, '_blank')}
                         title="Conversemos"
                         description="Ingresa a mi calendario para agendar un espacio"

@@ -30,7 +30,7 @@ const ContactSection = memo(() => (
                 Genera valor con tu data
               </h2>
               <p className="text-sm sm:text-base lg:text-lg text-white/80">
-                Conversemos para descubrir cómo lograrlo
+                Agéndame un espacio para conversar cómo lograrlo.
               </p>
             </div>
           </div>
@@ -79,9 +79,9 @@ const ContactSection = memo(() => (
               />
               <Button
                 href="/assets/pdf/Resume_Diego_Torres_ESP.pdf"
-                text="CV en Español"
+                text="Descarga mi CV"
                 variant="secondary"
-                className="w-3/4 mx-auto !border-gray-300 text-white"
+                className="w-3/4 mx-auto"
                 download="Resume_Diego_Torres_ESP.pdf"
                 ariaLabel="Descargar CV en Español"
               />

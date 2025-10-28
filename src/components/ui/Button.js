@@ -34,8 +34,8 @@ const Button = memo(({
   const baseStyles = "inline-flex items-center justify-center px-6 py-2 rounded-lg transition-all duration-200 whitespace-nowrap text-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-deep-purple disabled:opacity-60 disabled:cursor-not-allowed";
   
   const variantStyles = {
-    primary: 'bg-softwhite hover:bg-gray-400 text-black shadow-lg hover:shadow-xl active:transform active:scale-95 border border-gray-200',
-    secondary: 'bg-transparent border border-system-gray hover:border-pale-sage text-soft-slate hover:text-steel-blue active:transform active:scale-95'
+    primary: 'bg-system-gray hover:bg-gray-400 text-black shadow-lg hover:shadow-xl active:transform active:scale-95 border border-gray-200',
+    secondary: 'bg-transparent border border-system-gray hover:border-pale-sage text-gray-300 hover:text-pale-sage active:transform active:scale-95'
   };
 
   const commonProps = {
@@ -75,12 +75,13 @@ const Button = memo(({
 
   // Regular link
   if (link) {
+    const isInternalLink = link.startsWith('#') || link.startsWith('/');
     return (
       <a
         {...commonProps}
         href={link}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={isInternalLink ? '_self' : '_blank'}
+        rel={isInternalLink ? undefined : 'noopener noreferrer'}
         tabIndex={isLoading ? -1 : 0}
       >
         {content}

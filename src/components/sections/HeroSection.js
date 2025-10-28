@@ -15,7 +15,7 @@
 
 import React, { memo } from 'react';
 import Button from '../ui/Button';
-import { CTA_LINK } from '../../data/navigation';
+import { CTA_LINK, NAV_LINKS } from '../../data/navigation';
 
 
 const HeroSection = memo(() => {
@@ -29,20 +29,27 @@ const HeroSection = memo(() => {
         <div className="flex flex-col items-left">
           <div className="w-full max-w-3xl pl-6 mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight text-left mb-6 mt-4">
-              Convierte tu data en valor económico
+              Convierte tu data en beneficio económico
             </h1>
             <div 
               className="text-xl md:text-2xl font-semibold text-gray-500 mb-8 text-left max-w-2xl"
               role="doc-subtitle"
             >
-              Soy científico de datos, resuelvo problemas de negocio con data.
+              Descubre algunos proyectos que lideré y generaron más de $100 millones en ahorros al año.
             </div>
-            <div className="flex justify-left">
+            <div className="flex flex-col sm:flex-row gap-4 justify-left items-start">
+              <Button 
+                link={NAV_LINKS[1].href}
+                text="Descubre mi portafolio" 
+                variant="primary"
+                className="shadow-xl hover:shadow-2xl transition-shadow duration-300 w-fit sm:w-auto" 
+                aria-label="Portafolio"
+              />
               <Button 
                 link={CTA_LINK}
-                text="Agéndame un espacio" 
-                variant="primary"
-                className="shadow-xl hover:shadow-2xl transition-shadow duration-300" 
+                text="Conversemos" 
+                variant="secondary"
+                className="shadow-xl hover:shadow-2xl transition-shadow duration-300 w-fit sm:w-auto" 
                 aria-label="Agendar una conversación"
               />
             </div>

@@ -14,7 +14,7 @@
  */
 
 import React, { useState } from 'react';
-import Portfolio from './pages/Portfolio';
+import Home from './pages/Home';
 import './styles/animations.css';
 
 // Error Boundary Component
@@ -70,7 +70,7 @@ const App = () => {
     <ErrorBoundary>
       <ThemeContext.Provider value={{ theme, toggleTheme }}>
         <div className={`${theme}-theme min-h-screen`}>
-          <Portfolio />
+          <Home />
         </div>
       </ThemeContext.Provider>
     </ErrorBoundary>

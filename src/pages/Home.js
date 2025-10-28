@@ -1,6 +1,6 @@
 /**
- * @component Portfolio
- * @description Main portfolio page component that orchestrates the layout and sections
+ * @component Home
+ * @description Main home page component that orchestrates the layout and sections
  * of the personal portfolio website. Implements performance optimizations through
  * React.lazy loading and component memoization.
  * 
@@ -39,7 +39,7 @@ const SectionLoader = () => (
   </div>
 );
 
-const Portfolio = React.memo(() => {
+const Home = React.memo(() => {
   return (
     <div className="min-h-screen w-full relative bg-black">
       {/* Prismatic Aurora Burst - Multi-layered Gradient Background */}
@@ -61,10 +61,10 @@ const Portfolio = React.memo(() => {
           <HeroSection />
         </Suspense>
         <Suspense fallback={<SectionLoader />}>
-          <CompaniesSection />
+          <PortfolioSection />
         </Suspense>
         <Suspense fallback={<SectionLoader />}>
-          <PortfolioSection />
+          <CompaniesSection />
         </Suspense>
         <Suspense fallback={<SectionLoader />}>
           <ContactSection />
@@ -76,6 +76,6 @@ const Portfolio = React.memo(() => {
 });
 
 // Add display name for better debugging
-Portfolio.displayName = 'Portfolio';
+Home.displayName = 'Home';
 
-export default Portfolio;
+export default Home;
