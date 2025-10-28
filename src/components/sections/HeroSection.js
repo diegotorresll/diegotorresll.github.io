@@ -43,7 +43,7 @@ const HeroSection = memo(() => {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-left items-start">
               <Button 
-                link={NAV_LINKS[1].href}
+                link={NAV_LINKS[0].href}
                 text="Descubre mi portafolio" 
                 variant="primary"
                 className="shadow-xl hover:shadow-2xl transition-shadow duration-300 w-fit sm:w-auto" 
