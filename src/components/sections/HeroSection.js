@@ -39,7 +39,7 @@ const HeroSection = memo(() => {
               className="text-lg md:text-xl font-normal text-primary-subtle mb-8 text-left max-w-2xl"
               role="doc-subtitle"
             >
-              Descubre algunos proyectos que lideré y generaron más de $100 millones de ahorros al año.
+              Descubre algunos proyectos que lideré y generaron más de $100 millones de ahorros al año
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-left items-start">
               <Button 

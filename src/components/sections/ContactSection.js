@@ -30,7 +30,7 @@ const ContactSection = memo(() => (
                 Genera valor con tu data
               </h2>
               <p className="text-lg md:text-xl font-normal text-primary-subtle">
-                Agéndame un espacio para conversar cómo lograrlo.
+                Agéndame un espacio para conversar cómo lograrlo
               </p>
             </div>
           </div>

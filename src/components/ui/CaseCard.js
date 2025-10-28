@@ -100,7 +100,7 @@ const CaseCard = memo(({
           {/* Icon container */}
           <motion.div
             layoutId={`icon-container-${caseStudy.id}`}
-            className="relative w-16 h-16 md:w-32 md:h-32 mb-4 md:mb-8 flex items-center justify-center"
+            className="relative w-16 h-16 md:w-20 md:h-20 mb-3 md:mb-4 flex items-center justify-center"
             aria-hidden="true"
             transition={sharedTransition}
           >
@@ -109,14 +109,14 @@ const CaseCard = memo(({
               className="flex items-center justify-center"
               transition={sharedTransition}
             >
-              <caseStudy.icon className="w-8 h-8 md:w-16 md:h-16 text-steel-blue" />
+              <caseStudy.icon className="w-8 h-8 md:w-10 md:h-10 text-steel-blue" />
             </motion.div>
           </motion.div>
 
           {/* Title and Description */}
           <motion.div 
             layoutId={`title-container-${caseStudy.id}`}
-            className="text-center space-y-2"
+            className="text-center space-y-1"
             transition={sharedTransition}
           >
             <motion.h3 
