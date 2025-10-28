@@ -33,10 +33,10 @@ const HeroSection = memo(() => {
               text="Convierte tu data en beneficio económico"
               highlightText="beneficio económico"
               className="mb-6 mt-4"
-              highlightClassName="text-cyan-400 italic font-serif"
+              highlightClassName="text-accent-cyan italic font-serif"
             />
             <div 
-              className="text-xl md:text-2xl font-semibold text-gray-400 mb-8 text-left max-w-2xl"
+              className="text-lg md:text-xl font-normal text-primary-subtle mb-8 text-left max-w-2xl"
               role="doc-subtitle"
             >
               Descubre algunos proyectos que lideré y generaron más de $100 millones de ahorros al año.

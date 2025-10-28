@@ -51,7 +51,7 @@ const NavLink = memo(({ href, label, onClick }) => {
       <div className="absolute inset-0 bg-white/20 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       
       {/* Label */}
-      <span className="relative font-medium text-white/90 group-hover:text-white transition-colors duration-300">
+      <span className="relative font-medium text-primary/90 group-hover:text-primary transition-colors duration-300">
         {label}
       </span>
     </a>
@@ -248,12 +248,12 @@ const NavBar = memo(() => {
                 className="flex items-center focus:outline-none focus:ring-2 focus:ring-deep-purple focus:ring-offset-2 rounded-lg px-2 py-1"
                 aria-label="Ir al inicio"
               >
-                <span className="text-lg font-bold text-white">Diego Torres</span>
+                <span className="text-lg font-bold text-primary">Diego Torres</span>
               </a>
 
               {/* Mobile menu button */}
               <button 
-                className="md:hidden text-white/90 hover:text-white transition-colors
+                className="md:hidden text-primary/90 hover:text-primary transition-colors
                   p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
                 onClick={toggleMobileMenu}
                 aria-expanded={isMobileMenuOpen}
@@ -328,7 +328,7 @@ const NavBar = memo(() => {
                               <div className="grid grid-cols-[0.9fr,auto] items-center gap-3">
                                 <div>
                                   <div>{label}</div>
-                                  <p className="text-xs text-black font-normal">{getDescription()}</p>
+                                  <p className="text-xs text-gray-700 font-normal">{getDescription()}</p>
                                 </div>
                                 {label === "Portafolio"}
                               </div>

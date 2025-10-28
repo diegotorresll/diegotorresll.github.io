@@ -5,38 +5,29 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Background Colors
-        'off-white': '#FAFAFA',
-        'glass': 'rgba(255, 255, 255, 0.65)',
-        'glass-nav': 'rgba(255, 255, 255, 0.8)',
-        
-        // Main Colors
-        'soft-slate': '#64748B',
-        'steel-blue': '#334155',
-        'pale-sage': '#94A3B8',
+        // Standardized Design System Colors
+        'primary': '#FFFFFF',           // Pure white for main text
+        'primary-muted': '#E2E8F0',     // Light gray for secondary text  
+        'primary-subtle': '#94A3B8',    // Muted gray for descriptions
         
         // Accent Colors
-        'deep-purple': '#6366F1',
-        'light-purple': '#818CF8',
-        'system-gray': '#E2E8F0',
+        'accent-cyan': '#22D3EE',       // Cyan for highlights
+        'accent-purple': '#6366F1',     // Deep purple for CTAs
+        'accent-emerald': '#10B981',    // Emerald for success/positive
         
-        // Modern Button Colors
-        'indigo-600': '#4F46E5',
-        'blue-600': '#2563EB',
-        'emerald-600': '#059669',
-        'rose-600': '#DC2626',
-        'violet-600': '#7C3AED',
+        // Background Colors
+        'bg-primary': '#000000',        // Black background
+        'bg-secondary': '#0F172A',      // Dark slate for sections
+        'bg-accent': '#1E293B',         // Slightly lighter for cards
         
-        // OKLCH Colors
-        'oklch-primary': 'oklch(0.922 0 0)',
-        
-        // Legacy colors (keeping for backward compatibility)
-        black: '#000000',
-        charcoal: '#333333',
-        darkgray: '#666666',
-        gold: '#FFD700',
-        emerald: '#00FFA3',
-        softwhite: '#F5F5F5',
+        // Currently Used Legacy Colors
+        'off-white': '#FAFAFA',         // Used in CaseCard
+        'soft-slate': '#64748B',        // Used in CaseCard
+        'steel-blue': '#334155',        // Used in CaseCard
+        'pale-sage': '#94A3B8',         // Used in Button
+        'deep-purple': '#6366F1',       // Used in NavBar, Button, CaseCard
+        'system-gray': '#E2E8F0',       // Used in Button, CaseCard
+        'emerald-600': '#059669',       // Used in CaseDetail
       },
       backgroundImage: {
         'grain': "url('data:image/png;base64,data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAElBMVEWIiIiIiIiIiIiIiIiIiIiIiIhh4uDGAAAABnRSTlMAMDAwMDCXjpLYAAAAMElEQVQ4y2NgGAWjYBSMAkwQyMLACAdMDKMKRhWMKhhVMKpgVMGoggEXjIJRMApwAQAqogX5GkdvjwAAAABJRU5ErkJggg==')",

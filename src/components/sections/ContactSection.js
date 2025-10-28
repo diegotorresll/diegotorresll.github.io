@@ -21,15 +21,15 @@ import { CTA_LINK } from '../../data/navigation';
 const ContactSection = memo(() => (
   <section id="contact" className="py-24 sm:py-32">
     <div className="max-w-5xl mx-auto px-4">
-      <div className="rounded-[24px] w-full mx-auto bg-gradient-to-br from-[hsl(60,5%,44%)] to-[hsl(30,5%,25%)] overflow-hidden">
+      <div className="rounded-[16px] w-full mx-auto bg-gradient-to-br from-[hsla(60,5%,44%,0.65)] to-[hsla(30,5%,25%,0.80)] overflow-hidden">
         <div className="flex flex-col lg:flex-row">
           {/* Text Content */}
           <div className="flex-1 flex items-center justify-center p-16 lg:p-16">
             <div className="text-center lg:text-left">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
                 Genera valor con tu data
               </h2>
-              <p className="text-sm sm:text-base lg:text-lg text-white/80">
+              <p className="text-lg md:text-xl font-normal text-primary-subtle">
                 Agéndame un espacio para conversar cómo lograrlo.
               </p>
             </div>

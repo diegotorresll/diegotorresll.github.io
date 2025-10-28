@@ -119,12 +119,12 @@ const PortfolioSection = memo(() => {
         <div className="max-w-2xl mx-auto text-center mb-16">
           <h2 
             id="portfolio-title"
-            className="text-3xl md:text-4xl font-bold text-gray-100 mb-6"
+            className="text-3xl md:text-4xl font-bold text-primary mb-6"
           >
             Portafolio de Analítica y ML
           </h2>
-          <p className="text-gray-300 text-lg">
-            Conoce el detalle cómo los datos generaron beneficios financieros a través de la ciencia de datos y machine learning
+          <p className="text-primary-subtle text-lg md:text-xl font-normal">
+            Conoce el detalle cómo logré generar valor a través de la ciencia de datos y machine learning
           </p>
         </div>
 
