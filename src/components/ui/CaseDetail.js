@@ -342,7 +342,7 @@ const CaseDetail = ({ caseStudy, onClose }) => {
                   >
                     <motion.h2
                       layoutId={`title-${caseStudy.id}`}
-                      className="text-2xl md:text-4xl font-semibold text-gray-900 text-left md:text-center max-w-2xl"
+                      className="text-2xl md:text-3xl font-semibold text-gray-900 text-left max-w-2xl"
                     >
                       {caseStudy.title}
                     </motion.h2>
@@ -355,11 +355,12 @@ const CaseDetail = ({ caseStudy, onClose }) => {
                 variants={contentVariants}
                 initial="hidden"
                 animate="visible"
-                className="space-y-6 md:space-y-24 pb-12"
+                className="space-y-6 md:space-y-12 pb-12"
               >
                 {/* Problem Statement Section */}
                 <div ref={sectionRefs.problem} className="space-y-6 md:space-y-8">
                   <div className="prose prose-sm md:prose-lg max-w-none text-gray-600">
+                    <h4 className="text-lg md:text-xl text-gray-900 mt-8 mb-4">Desafío</h4>
                     <p className="mb-4">
                       {caseStudy.challenge}
                     </p>
@@ -377,8 +378,8 @@ const CaseDetail = ({ caseStudy, onClose }) => {
                 {/* Solution Approach Section */}
                 <div ref={sectionRefs.solution} className="space-y-6 md:space-y-8">
                   <div className="prose prose-sm md:prose-lg max-w-none text-gray-600">
+                    <h4 className="text-lg md:text-xl text-gray-900 mt-8 mb-4">Solución</h4>
                     <p className="mb-4">{caseStudy.solutionDescription}</p>
-                    
                     <ul className="list-none space-y-2">
                       {caseStudy.solutionFramework.map((item, index) => (
                         <li key={index} className="flex items-start">
@@ -387,39 +388,37 @@ const CaseDetail = ({ caseStudy, onClose }) => {
                         </li>
                       ))}
                     </ul>
-                    <h4 className="text-lg md:text-xl text-gray-900 mt-8 mb-4">Métricas de Impacto</h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 not-prose mt-8">
-                      {caseStudy.impact.metrics.map((metric, index) => (
-                        <div key={index} className="p-4 sm:p-6 bg-white rounded-xl text-center shadow-sm">
-                          <div className="text-xl sm:text-2xl md:text-3xl font-bold text-emerald-600 mb-2">{metric.value}</div>
-                          <div className="text-xs sm:text-sm text-gray-600">{metric.label}</div>
-                        </div>
-                      ))}
+                    
+                    <div className="mt-6 aspect-video overflow-hidden">
+                      <img 
+                        src={caseStudy.analysis.image} 
+                        alt={caseStudy.analysis.alt}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.nextSibling.style.display = 'flex';
+                        }}
+                      />
+                      <div className="w-full h-full bg-gray-100 flex items-center justify-center hidden">
+                        <p className="text-gray-500">Imagen de demostración no disponible</p>
+                      </div>
                     </div>
+                    
                   </div>
                 </div>
 
                 {/* Demo Section */}
                 <div ref={sectionRefs.demo} className="space-y-6 md:space-y-8">
-                  <h3 className="text-xl md:text-2xl font-semibold text-gray-900">Demostración de Solución</h3>
                   <div className="prose prose-sm md:prose-lg max-w-none text-gray-600">
-                    <p className="mb-6">{caseStudy.demo.description}</p>
-                    <div className="bg-white rounded-xl p-2 sm:p-6 lg:p-8 shadow-sm not-prose">
-                      <div className="aspect-video rounded-lg overflow-hidden">
-                        <img 
-                          src={caseStudy.demo.image} 
-                          alt={caseStudy.demo.alt}
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            e.target.style.display = 'none';
-                            e.target.nextSibling.style.display = 'flex';
-                          }}
-                        />
-                        <div className="w-full h-full bg-gray-100 flex items-center justify-center hidden">
-                          <p className="text-gray-500">Imagen de demostración no disponible</p>
-                        </div>
-                      </div>
-                    </div>
+                    <h4 className="text-lg md:text-xl text-gray-900 mt-8 mb-4">Aprendizajes</h4>
+                    <ul className="list-none space-y-2">
+                      {caseStudy.learnings.map((learning, index) => (
+                        <li key={index} className="flex items-start">
+                          <div className="w-1.5 h-1.5 bg-gray-400 xs mt-2 mr-3 flex-shrink-0"></div>
+                          <span>{learning}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </motion.div>

@@ -57,7 +57,7 @@ export const BentoGridItem = memo(({
       role={onClick ? "button" : undefined}
       tabIndex={onClick ? 0 : undefined}
       className={cn(
-        "row-span-1 rounded-xl group/bento transition duration-200 p-4 bg-gray-50 hover:bg-gray-100 justify-between flex flex-col space-y-4 cursor-pointer",
+        "row-span-1 rounded-xl group/bento transition duration-200 pl-3 pr-4 py-4 md:p-4 bg-gray-50 hover:bg-gray-100 justify-between flex flex-col space-y-4 cursor-pointer",
         isActive && "bg-gray-100",
         className
       )}

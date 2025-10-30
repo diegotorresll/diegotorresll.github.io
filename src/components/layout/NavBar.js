@@ -301,7 +301,7 @@ const NavBar = memo(() => {
                   style={{ maxWidth: 'calc(100vw - 1rem)' }}
                 >
                   <div 
-                    className="p-3 bg-black/20 backdrop-blur-md rounded-lg"
+                    className="p-2 bg-black/20 backdrop-blur-md rounded-lg"
                     style={{
                       border: '1px solid rgba(75, 85, 99, 0.6)'
                     }}
@@ -325,11 +325,13 @@ const NavBar = memo(() => {
                           <BentoGridItem
                             key={href}
                             header={
-                              <div className="space-y-2">
-                                <div className="font-sans font-bold text-gray-800">
+                              <div className="space-y-1 min-w-0">
+                                <div className="font-sans font-bold text-gray-800 break-words hyphens-auto text-sm sm:text-base" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', hyphens: 'auto', WebkitHyphens: 'auto' }}>
                                   {label}
                                 </div>
-                                <p className="text-xs text-gray-700 font-normal">{getDescription()}</p>
+                                <p className="text-xs text-gray-700 font-normal break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
+                                  {getDescription()}
+                                </p>
                               </div>
                             }
                             onClick={(e) => {
@@ -409,7 +411,7 @@ const NavBar = memo(() => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.5 }}
               onClick={scrollToTop}
-              className="fixed bottom-6 right-20 p-3 bg-cyan-400 text-black rounded-full shadow-lg md:hidden
+              className="fixed bottom-6 right-7 p-3 bg-cyan-400 text-black rounded-full shadow-lg md:hidden
                 hover:bg-cyan-400/90 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2
                 z-50 transition-colors duration-300"
               aria-label="Volver arriba"

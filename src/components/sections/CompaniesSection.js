@@ -19,7 +19,7 @@ const CompaniesSection = () => {
           Experiencia en empresas líderes de Latinoamérica
         </h2>
         <p className="text-lg md:text-xl font-normal text-center mb-12 max-w-3xl mx-auto text-primary-subtle">
-          Combino tecnología y finanzas para resolver problemas de negocio con data.
+          Cuento con más de 15 años de experiencia laboral, combinando ciencia de datos y finanzas para resolver problemas de negocio.
         </p>
         
         <div className="overflow-hidden">

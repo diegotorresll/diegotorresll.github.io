@@ -26,6 +26,10 @@ export const cases = [
       "Real-time analytics dashboard with customizable views",
       "Machine learning models for predictive insights"
     ],
+    analysis: {
+      image: "/cases/alicorp-demo.png",
+      alt: "Análisis de datos mostrando patrones de rentabilidad y optimización del portafolio de productos"
+    },
     impact: {
       headline: "46% Efficiency Improvement",
       metrics: [
@@ -51,11 +55,11 @@ export const cases = [
       timeline: "4 months",
       team: "4 data scientists, 2 ML engineers"
     },
-    demo: {
-      description: "Experimenta la solución en acción a través de esta demostración interactiva.",
-      image: "/cases/alicorp-demo.png",
-      alt: "Dashboard de ML en tiempo real mostrando predicciones operativas y métricas de rendimiento"
-    }
+    learnings: [
+      "Machine learning models require continuous monitoring and retraining to maintain accuracy",
+      "Real-time data integration is crucial for operational decision-making",
+      "Stakeholder buy-in and training are essential for successful ML adoption"
+    ]
   },
   {
     id: "alicorp-churn",
@@ -76,6 +80,10 @@ export const cases = [
       "Machine learning models for trend prediction",
       "Interactive dashboards for real-time insights"
     ],
+    analysis: {
+      image: "/cases/gloria-demo.png",
+      alt: "Análisis predictivo de tendencias de mercado y comportamiento de churn de clientes"
+    },
     impact: {
       headline: "28% Revenue Growth",
       metrics: [
@@ -101,11 +109,11 @@ export const cases = [
       timeline: "6 months",
       team: "3 data analysts, 2 BI developers"
     },
-    demo: {
-      description: "Explora la plataforma de analytics predictivos con visualizaciones interactivas de tendencias de mercado.",
-      image: "/cases/gloria-demo.png",
-      alt: "Dashboard de analytics con gráficos de tendencias, predicciones de demanda y análisis de riesgo en tiempo real"
-    }
+    learnings: [
+      "Data integration from multiple sources requires careful planning and standardization",
+      "Predictive analytics models improve significantly with more historical data",
+      "User-friendly dashboards increase adoption rates among non-technical stakeholders"
+    ]
   },
   {
     id: "alicorp-packages",
@@ -126,6 +134,10 @@ export const cases = [
       "AI-powered decision engines for complex workflows",
       "Automated quality assurance and error handling"
     ],
+    analysis: {
+      image: "/cases/vitapro-demo.png",
+      alt: "Análisis de procesos automatizados mostrando precisión en envasado y optimización de workflows"
+    },
     impact: {
       headline: "75% Time Saved",
       metrics: [
@@ -151,11 +163,11 @@ export const cases = [
       timeline: "5 months",
       team: "3 automation engineers, 1 solution architect"
     },
-    demo: {
-      description: "Observa cómo los procesos automatizados funcionan en tiempo real con monitoreo inteligente.",
-      image: "/cases/vitapro-demo.png",
-      alt: "Sistema de automatización mostrando workflows en ejecución, métricas de rendimiento y detección automática de errores"
-    }
+    learnings: [
+      "Incremental automation reduces risk and allows for better stakeholder adaptation",
+      "Quality assurance processes are critical for maintaining automated system reliability",
+      "Continuous monitoring and feedback loops improve automation accuracy over time"
+    ]
   }
 ];
 
