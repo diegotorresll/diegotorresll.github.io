@@ -439,7 +439,7 @@ const CaseDetail = ({ caseStudy, onClose }) => {
                         }}
                       />
                       <div className="w-full h-full bg-gray-100 flex items-center justify-center hidden">
-                        <p className="text-gray-500">Imagen de demostración no disponible</p>
+                        <p className="text-gray-500">{caseStudy.analysis.alt || "Imagen de demostración no disponible"}</p>
                       </div>
                     </div>
                     
