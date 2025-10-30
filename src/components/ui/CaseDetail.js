@@ -38,45 +38,66 @@ const contentVariants = {
 const sections = [
   { id: 'problem', label: '01 Problema' },
   { id: 'solution', label: '02 Solución' },
-  { id: 'demo', label: '03 Demostración' }
+  { id: 'learnings', label: '03 Aprendizajes' }
 ];
 
 const CaseDetail = ({ caseStudy, onClose }) => {
   const [activeSection, setActiveSection] = useState('problem');
   const contentRef = useRef(null);
+  const isScrollingProgrammatically = useRef(false);
   
   // Create refs first
   const problemRef = useRef(null);
   const solutionRef = useRef(null);
-  const demoRef = useRef(null);
+  const learningsRef = useRef(null);
   
   // Then memoize the object containing them
   const sectionRefs = useMemo(() => ({
     problem: problemRef,
     solution: solutionRef,
-    demo: demoRef
+    learnings: learningsRef
   }), []); // Empty dependency array since the refs themselves don't change
 
   const scrollToSection = (sectionId) => {
-    const section = sectionRefs[sectionId].current;
+    const section = sectionRefs[sectionId]?.current;
     const content = contentRef.current;
-    if (section && content) {
-      // If it's the first section (problem), scroll to top
-      if (sectionId === 'problem') {
-        content.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      } else {
+    if (!section || !content) return;
+    
+    // Update active section immediately for visual feedback
+    setActiveSection(sectionId);
+    
+    // Set flag to prevent scroll tracking from interfering
+    isScrollingProgrammatically.current = true;
+    
+    // If it's the first section (problem), scroll to top
+    if (sectionId === 'problem') {
+      content.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      // Request animation frame to ensure layout is stable
+      requestAnimationFrame(() => {
         const sectionRect = section.getBoundingClientRect();
         const contentRect = content.getBoundingClientRect();
         const offsetTop = sectionRect.top - contentRect.top;
+        const scrollTop = content.scrollTop + offsetTop - 120;
+        
+        // Ensure we don't scroll beyond the content
+        const maxScroll = content.scrollHeight - content.clientHeight;
+        const targetScroll = Math.min(scrollTop, maxScroll);
+        
         content.scrollTo({
-          top: content.scrollTop + offsetTop - 120,
+          top: Math.max(0, targetScroll),
           behavior: 'smooth'
         });
-      }
+      });
     }
+    
+    // Clear flag after scroll completes
+    setTimeout(() => {
+      isScrollingProgrammatically.current = false;
+    }, 600);
   };
 
   // Track scroll position to update active section
@@ -85,25 +106,43 @@ const CaseDetail = ({ caseStudy, onClose }) => {
       const contentElement = contentRef.current;
       if (!contentElement) return;
       
+      // Skip tracking during programmatic scrolling
+      if (isScrollingProgrammatically.current) return;
+      
       // Get all sections and their positions
       const sectionPositions = sections.map(section => {
         const element = sectionRefs[section.id].current;
-        if (!element) return { id: section.id, top: Infinity };
+        if (!element) return { id: section.id, top: Infinity, bottom: Infinity };
         
         const rect = element.getBoundingClientRect();
         const parentRect = contentElement.getBoundingClientRect();
         return {
           id: section.id,
-          top: rect.top - parentRect.top
+          top: rect.top - parentRect.top,
+          bottom: rect.bottom - parentRect.top
         };
       });
 
+      // Check if we're near the bottom of the content (within last 200px)
+      const contentBottom = contentElement.scrollHeight - contentElement.scrollTop - contentElement.clientHeight;
+      const isNearBottom = contentBottom < 200;
+
+      // If near bottom, prioritize the last section (learnings)
+      if (isNearBottom) {
+        const lastSection = sectionPositions[sectionPositions.length - 1];
+        if (lastSection && lastSection.top !== Infinity) {
+          setActiveSection(lastSection.id);
+          return;
+        }
+      }
+
       // Find the section closest to the top
       const activeSection = sectionPositions.reduce((prev, curr) => {
+        // If section is in viewport (within 150px from top), prioritize it
         if (curr.top <= 150 && curr.top > -150) return curr;
         if (Math.abs(curr.top) < Math.abs(prev.top)) return curr;
         return prev;
-      });
+      }, sectionPositions[0] || { id: 'problem', top: 0 });
 
       setActiveSection(activeSection.id);
     };
@@ -255,7 +294,7 @@ const CaseDetail = ({ caseStudy, onClose }) => {
                     <div className="subheader">
                       {section.id === 'problem' && 'Comprendiendo el desafío'}
                       {section.id === 'solution' && 'Implementación estratégica'}
-                      {section.id === 'demo' && 'Resultados e impacto'}
+                      {section.id === 'learnings' && 'Reflexiones y aprendizajes'}
                     </div>
                   </label>
                 </React.Fragment>
@@ -342,7 +381,7 @@ const CaseDetail = ({ caseStudy, onClose }) => {
                   >
                     <motion.h2
                       layoutId={`title-${caseStudy.id}`}
-                      className="text-2xl md:text-3xl font-semibold text-gray-900 text-left max-w-2xl"
+                      className="text-2xl md:text-3xl font-semibold text-gray-900 text-left md:text-center max-w-2xl"
                     >
                       {caseStudy.title}
                     </motion.h2>
@@ -407,8 +446,8 @@ const CaseDetail = ({ caseStudy, onClose }) => {
                   </div>
                 </div>
 
-                {/* Demo Section */}
-                <div ref={sectionRefs.demo} className="space-y-6 md:space-y-8">
+                {/* Learnings Section */}
+                <div ref={sectionRefs.learnings} className="space-y-6 md:space-y-8">
                   <div className="prose prose-sm md:prose-lg max-w-none text-gray-600">
                     <h4 className="text-lg md:text-xl text-gray-900 mt-8 mb-4">Aprendizajes</h4>
                     <ul className="list-none space-y-2">
