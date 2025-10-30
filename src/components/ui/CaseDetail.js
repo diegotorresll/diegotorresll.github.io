@@ -458,6 +458,23 @@ const CaseDetail = ({ caseStudy, onClose }) => {
                         </li>
                       ))}
                     </ul>
+                    
+                    {/* Technologies Section */}
+                    {caseStudy.technologies && caseStudy.technologies.length > 0 && (
+                      <div className="mt-8 not-prose">
+                        <h4 className="text-lg md:text-xl text-gray-900 mb-4">Tecnología</h4>
+                        <div className="flex flex-wrap gap-3">
+                          {caseStudy.technologies.map((tech, index) => (
+                            <div
+                              key={index}
+                              className="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium text-gray-700 transition-colors duration-200"
+                            >
+                              {tech}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </motion.div>
