@@ -321,19 +321,18 @@ const CaseDetail = ({ caseStudy, onClose }) => {
               className="relative px-8 sm:px-10 lg:px-14"
             >
               {/* Header Section */}
-              <div className="relative min-h-[120px] mb-12 pt-0">
+              <div className="relative min-h-[120px] mb-8 pt-0">
                 {/* Icon and Title Container */}
                 <div className="flex flex-col items-center space-y-2">
                   {/* Large background icon */}
                   <motion.div
                     layoutId={`icon-container-${caseStudy.id}`}
-                    className="flex items-center justify-center"
+                    className="flex items-center justify-center mb-4 md:mb-8"
                     style={{
                       transform: 'scale(1.5)',
-                      marginBottom: '2rem',
                     }}
                   >
-                    <caseStudy.icon className="w-16 h-16 md:w-24 md:h-24 text-gray-900" />
+                    <caseStudy.icon className="w-8 h-8 md:w-20 md:h-20 text-gray-900" />
                   </motion.div>
 
                   {/* Title */}
@@ -343,13 +342,10 @@ const CaseDetail = ({ caseStudy, onClose }) => {
                   >
                     <motion.h2
                       layoutId={`title-${caseStudy.id}`}
-                      className="text-4xl font-semibold text-gray-900 text-center max-w-2xl"
+                      className="text-2xl md:text-4xl font-semibold text-gray-900 text-left md:text-center max-w-2xl"
                     >
                       {caseStudy.title}
                     </motion.h2>
-                    <p className="mt-6 text-lg text-gray-500 text-center max-w-2xl leading-relaxed">
-                      {caseStudy.shortDescription}
-                    </p>
                   </motion.div>
                 </div>
               </div>
@@ -359,16 +355,14 @@ const CaseDetail = ({ caseStudy, onClose }) => {
                 variants={contentVariants}
                 initial="hidden"
                 animate="visible"
-                className="space-y-24 pb-12"
+                className="space-y-6 md:space-y-24 pb-12"
               >
                 {/* Problem Statement Section */}
-                <div ref={sectionRefs.problem} className="space-y-8">
-                  <h3 className="text-2xl font-semibold text-gray-900">Definición del Problema</h3>
-                  <div className="prose prose-lg max-w-none text-gray-600">
-                    <p>
+                <div ref={sectionRefs.problem} className="space-y-6 md:space-y-8">
+                  <div className="prose prose-sm md:prose-lg max-w-none text-gray-600">
+                    <p className="mb-4">
                       {caseStudy.challenge}
                     </p>
-                    <h4 className="text-gray-900 mt-8 mb-4">Desafíos Clave</h4>
                     <ul className="list-none space-y-2">
                       {caseStudy.keyChallenges.map((challenge, index) => (
                         <li key={index} className="flex items-start">
@@ -381,11 +375,10 @@ const CaseDetail = ({ caseStudy, onClose }) => {
                 </div>
 
                 {/* Solution Approach Section */}
-                <div ref={sectionRefs.solution} className="space-y-8">
-                  <h3 className="text-2xl font-semibold text-gray-900">Enfoque de Solución</h3>
-                  <div className="prose prose-lg max-w-none text-gray-600">
-                    <p>{caseStudy.solutionDescription}</p>
-                    <h4 className="text-gray-900 mt-8 mb-4">Marco de Solución</h4>
+                <div ref={sectionRefs.solution} className="space-y-6 md:space-y-8">
+                  <div className="prose prose-sm md:prose-lg max-w-none text-gray-600">
+                    <p className="mb-4">{caseStudy.solutionDescription}</p>
+                    
                     <ul className="list-none space-y-2">
                       {caseStudy.solutionFramework.map((item, index) => (
                         <li key={index} className="flex items-start">
@@ -394,11 +387,11 @@ const CaseDetail = ({ caseStudy, onClose }) => {
                         </li>
                       ))}
                     </ul>
-                    <h4 className="text-gray-900 mt-8 mb-4">Métricas de Impacto</h4>
+                    <h4 className="text-lg md:text-xl text-gray-900 mt-8 mb-4">Métricas de Impacto</h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 not-prose mt-8">
                       {caseStudy.impact.metrics.map((metric, index) => (
                         <div key={index} className="p-4 sm:p-6 bg-white rounded-xl text-center shadow-sm">
-                          <div className="text-2xl sm:text-3xl font-bold text-emerald-600 mb-2">{metric.value}</div>
+                          <div className="text-xl sm:text-2xl md:text-3xl font-bold text-emerald-600 mb-2">{metric.value}</div>
                           <div className="text-xs sm:text-sm text-gray-600">{metric.label}</div>
                         </div>
                       ))}
@@ -407,9 +400,9 @@ const CaseDetail = ({ caseStudy, onClose }) => {
                 </div>
 
                 {/* Demo Section */}
-                <div ref={sectionRefs.demo} className="space-y-8">
-                  <h3 className="text-2xl font-semibold text-gray-900">Demostración de Solución</h3>
-                  <div className="prose prose-lg max-w-none text-gray-600">
+                <div ref={sectionRefs.demo} className="space-y-6 md:space-y-8">
+                  <h3 className="text-xl md:text-2xl font-semibold text-gray-900">Demostración de Solución</h3>
+                  <div className="prose prose-sm md:prose-lg max-w-none text-gray-600">
                     <p className="mb-6">{caseStudy.demo.description}</p>
                     <div className="bg-white rounded-xl p-2 sm:p-6 lg:p-8 shadow-sm not-prose">
                       <div className="aspect-video rounded-lg overflow-hidden">

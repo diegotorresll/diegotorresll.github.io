@@ -4,17 +4,16 @@
  * impact achieved, and implementation details.
  */
 
-import { IoRocket, IoTrendingUp, IoSpeedometer } from "react-icons/io5";
+import { IoCash, IoAnalytics, IoScale } from "react-icons/io5";
 
 export const cases = [
   {
-    id: "alicorp-optimization",
-    title: "Alicorp's ML Optimization",
-    shortDescription: "46% efficiency improvement through ML",
+    id: "alicorp-profitportfolio",
+    title: "Optimización de rentabilidad en portafolio de productos",
     heroImage: "/cases/alicorp-hero.png",
     problem: "Complex decision-making slowing operations",
     solution: "Enterprise-grade machine learning solutions that transform operational data into actionable insights.",
-    icon: IoSpeedometer,
+    icon: IoCash,
     challenge: "The challenge was to revolutionize how data insights are delivered, making them more accessible and actionable for stakeholders across the organization.",
     keyChallenges: [
       "Existing processes were manual and time-consuming",
@@ -59,13 +58,12 @@ export const cases = [
     }
   },
   {
-    id: "gloria-analytics",
-    title: "Grupo Gloria's Predictive Analytics",
-    shortDescription: "28% revenue growth through data",
+    id: "alicorp-churn",
+    title: "Reducción de churn en clientes de consumo",
     heroImage: "/cases/gloria-hero.png",
     problem: "Struggling to predict market changes",
     solution: "Advanced analytics platform that helps stay ahead of market trends with data-driven decisions.",
-    icon: IoTrendingUp,
+    icon: IoAnalytics,
     challenge: "The challenge was to build a comprehensive analytics platform that could predict market trends and provide actionable insights for strategic decision-making.",
     keyChallenges: [
       "Fragmented data sources across multiple departments",
@@ -110,13 +108,12 @@ export const cases = [
     }
   },
   {
-    id: "vitapro-automation",
-    title: "Vitapro's AI Automation",
-    shortDescription: "75% process automation achieved",
+    id: "alicorp-packages",
+    title: "Incremento de precisión en planta de envasado",
     heroImage: "/cases/vitapro-hero.png",
     problem: "Manual processes consuming resources",
     solution: "AI-powered automation solutions that streamline operations and reduce manual effort.",
-    icon: IoRocket,
+    icon: IoScale,
     challenge: "The challenge was to automate complex manual processes that were consuming significant resources and causing operational bottlenecks.",
     keyChallenges: [
       "Repetitive manual tasks consuming valuable time",
